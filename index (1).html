@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>I am Sorry 💖</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+  color: #333;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Fade animation */
+.fade-in {
+  animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+header {
+  padding: 60px 20px;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+/* Message */
+.message {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.3em;
+  line-height: 1.6;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 50px 20px;
+}
+
+.gallery img {
+  width: 250px;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+/* Buttons */
+button {
+  padding: 15px 30px;
+  font-size: 1em;
+  border: none;
+  border-radius: 30px;
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+  margin: 20px;
+}
+
+button:hover {
+  background: #e63950;
+}
+
+/* Secret message */
+.secret-message {
+  display: none;
+  max-width: 650px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  font-size: 1.2em;
+  animation: popIn 1s ease forwards;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 24px;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="fade-in">
+  <h1>🎉 Mane Maaf karde, Mhari Dharani 🎉</h1>
+</header>
+
+<section class="message fade-in">
+  <p>
+    Mhari <strong>Bairan</strong>,<br><br>
+    I am Sorry baby,
+    Hey Gayu I am sorry yaar for everything har chiz ke liye sorry yrr
+    idk ky ho jata meko kabhi kabhi itna gussa kese aa jata maybe coz 
+    I love you too much ya shyd m hu hi aisa is baar kisi ke jesa ni ban
+    rha but jesa hu vese reh rha hu ik thoda zyada gussa kr leta hu but 
+    please ek last time? Ek aur chance?
+    <br><br>
+    I wish aapko bata paata how much I missed you but koi ni i hope ek din
+    you'll see how much I missed you back then and now too aur suno ek aur chiz, 
+    I miss you and i love you soo muchh sorry to annoy you and sorry in
+    advance that i'll keep doing that
+    <br><br>
+    I am sorry once again ❤💖
+  </p>
+</section>
+
+<button onclick="playMusic()">Play Music 🎶</button>
+
+<section class="gallery fade-in">
+  <img src="images/photo1.jpeg">
+  <img src="images/photo2.jpeg">
+  <img src="images/photo3.jpeg">
+  <img src="images/photo4.jpeg">
+</section>
+
+<button onclick="revealSecret()">Secret Message 💌</button>
+
+<div id="secret" class="secret-message">
+  <p>
+    💖 Surprise 💖<br><br>
+    Har roz nahi, par aaj kehna zaroori laga,
+    Tum ho toh zindagi ka har rang poora laga.
+    Kam baatein sahi, par ehsaas gehra hai,
+    I am sorry gayu but ek baat sach hai,
+    Mera sab kuch aapka hai
+    I pretend to be composed,
+    but your name dismantles me.
+    You’re not a distraction,
+    you’re the temptation I don’t resist 
+    I love you🌸
+  </p>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playMusic() {
+  document.getElementById("bgMusic").play();
+}
+
+function revealSecret() {
+  document.getElementById("secret").style.display = "block";
+}
+
+/* Floating hearts */
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}, 500);
+</script>
+
+</body>
+</html>
